@@ -1,0 +1,76 @@
+.form-section {
+  background: #191919;
+  min-height: 80vh;
+
+  @include flex(center, center, row);
+  margin-top: 3rem;
+  form {
+    padding: 3rem 8rem;
+    box-shadow: 0px 10px 10px rgba($color: rgb(36, 124, 175), $alpha: 0.5),
+      0px 20px 40px rgba($color: rgb(36, 124, 175), $alpha: 0.5);
+    @include flex(center, center, column);
+    border-radius: 2rem;
+    background: #191919;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      padding: 4rem 10rem;
+      box-shadow: 0px 10px 10px rgba($color: rgb(36, 175, 105), $alpha: 0.5),
+        0px 20px 40px rgba($color: rgb(36, 175, 105), $alpha: 0.5);
+    }
+
+    input,
+    textarea {
+      border: 0;
+      background: none;
+      text-align: center;
+      border: 0.4rem solid rgb(36, 124, 175);
+      outline: none;
+      color: white;
+      border-radius: 3rem;
+      transition: all 0.3s ease-in-out;
+
+      // Ager gula
+
+      width: 80%;
+      padding: 1.5rem;
+      margin: 2rem;
+      &:focus {
+        width: 110%;
+        border: 0.3rem solid rgb(36, 175, 105);
+      }
+    }
+    label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 5rem;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+    }
+    textarea {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.5rem;
+    }
+    button {
+      border: none;
+      width: 50%;
+      border: 0.3rem solid rgb(36, 175, 105);
+      padding: 2rem;
+      background: none;
+      color: white;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      border-radius: 3rem;
+      &:focus {
+        background: rgb(36, 175, 105);
+      }
+      &:hover {
+        background: rgb(36, 175, 105);
+      }
+    }
+  }
+}
+
+.active:hover {
+  box-shadow: 0px 5px 10px rgba($color: rgb(36, 175, 105), $alpha: 0.5),
+    0px 10px 40px rgba($color: rgb(36, 175, 105), $alpha: 0.5);
+}

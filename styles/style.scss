@@ -1,0 +1,97 @@
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2.5rem;
+$gradient: linear-gradient(left, #38d39f, #38a4d3);
+$background-color: #154353;
+$gray-text: #2c2c2c;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "intro";
+@import "projects";
+@import "contact";
+@import "footer";
+
+@media screen and (max-width: 1444px) {
+  html {
+    font-size: 53%;
+  }
+  .splash {
+    display: none;
+  }
+  svg {
+    width: 100%;
+  }
+  nav {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  nav {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+  svg {
+    height: 100%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  nav {
+    overflow: visible;
+    .logo {
+      margin-top: 2rem;
+      @include flex(center, center, column);
+      flex: 1 1 20rem;
+    }
+    ul {
+      flex: 1 1 60rem;
+      margin: 2rem 0rem;
+    }
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: center;
+  }
+  .intro-social {
+    @include flex(center, center, row);
+    a {
+      margin: 2rem;
+    }
+  }
+  .travelly,
+  .photography {
+    flex: 1 1 60;
+    img {
+      width: 90%;
+      height: 90%;
+      margin-bottom: 2rem;
+      &:hover {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+    form {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

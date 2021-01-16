@@ -1,0 +1,345 @@
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+
+//toggle
+
+body {
+  transition: all 0.3s ease-in-out;
+}
+
+.switch input {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.switch {
+  transform: translateX(13%);
+  width: 9rem;
+  height: 3rem;
+  position: relative;
+  margin: auto;
+}
+
+.switch label {
+  display: block;
+  width: 80%;
+  height: 100%;
+  position: relative;
+  background: #1f2736; /*#121823*/
+  background: linear-gradient(#121823, #161d2b);
+  border-radius: 2.5rem;
+  box-shadow: inset 0 3px 8px 1px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.2);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.switch input ~ label i {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  z-index: 2;
+  border-radius: inherit;
+  background: #283446; /* Fallback */
+  background: linear-gradient(#36455b, #283446);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 4px rgba(0, 0, 0, 0.3),
+    0 6px 6px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Toggle */
+
+.switch input:checked ~ label + span {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 2;
+  background: #b9f3fe;
+  background: gradient-gradient(#ffffff, #77a1b9);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(100, 231, 253, 1), inset 0 0 8px rgba(61, 157, 247, 0.8),
+    inset 0 -2px 5px rgba(185, 231, 253, 0.3),
+    inset 0 -3px 8px rgba(185, 231, 253, 0.5);
+}
+
+.switch input:checked ~ label i {
+  left: auto;
+  left: 63%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 8px rgba(0, 0, 0, 0.3),
+    0 8px 8px rgba(0, 0, 0, 0.3), inset -1px 0 1px #b9f3fe;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+nav {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 65%;
+  flex-wrap: wrap;
+  overflow: hidden;
+  .logo {
+    @include flex(flex-start, center, row);
+    flex: 1 1 10rem;
+    h1 {
+      margin: 2rem;
+    }
+  }
+  ul {
+    @include flex(space-around, center, row);
+    flex: 1 1 40rem;
+  }
+}
+
+.intro {
+  min-height: 80vh;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+
+  @include flex(space-around, center, row);
+  h2 {
+    font-size: 8rem;
+    padding-top: 2rem;
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    background: $gradient;
+    background-clip: text;
+  }
+  h3 {
+    font-size: 6rem;
+    padding: 2rem 0rem;
+  }
+  p {
+    padding-top: 2rem;
+    color: $gray-text;
+  }
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -1;
+}
+
+.intro-social {
+  margin-top: 4rem;
+  a {
+    margin-right: 5rem;
+  }
+}
+
+.active {
+  transition: all 0.5s ease-in-out;
+  background: $gray-text;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.intro-text,
+.intro-images {
+  flex: 1 1 40rem;
+}
+
+#me {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  transition: all 0.5s ease-in-out;
+}
+
+#rotateT {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: clock 3.5s linear infinite;
+}
+
+#bracketL {
+  animation: arrow 2s ease-in-out infinite alternate,
+    colorz 2s ease-in-out infinite alternate;
+}
+#bracketR {
+  animation: arrowU 2s ease-in-out infinite alternate,
+    colorz 2s ease-in-out infinite alternate;
+}
+#Vector {
+  fill: #bdbcbc;
+  transition: all 1.5s ease-in-out;
+}
+
+#Vector-9,
+#Vector-10 {
+  animation: linez 7s ease infinite;
+}
+#Vector-16,
+#Vector-17 {
+  animation: linez 7s ease infinite 1s;
+}
+#Vector-7,
+#Vector-8 {
+  animation: linez 7s ease infinite 2s;
+}
+#Vector-11,
+#Vector-12 {
+  animation: linez 7s ease infinite 3s;
+}
+#Vector-13,
+#Vector-14,
+#Vector-15 {
+  animation: linez 7s ease infinite 4s;
+}
+
+#Vector-23,
+#Vector-24,
+#Vector-25 {
+  animation: linez 7s ease infinite 6s;
+}
+#Vector-20,
+#Vector-21,
+#Vector-22 {
+  animation: linez 7s ease infinite 7s;
+}
+#Vector-18,
+#Vector-19 {
+  animation: linez 7s ease infinite 8s;
+}
+#Vector-26,
+#Vector-27 {
+  animation: linez 7s ease infinite 9s;
+}
+#ball1 {
+  animation: colorz 2s ease-in-out infinite alternate;
+}
+#ball2 {
+  animation: colorz 2s ease-in-out infinite alternate 1s;
+}
+#ball3 {
+  animation: colorz 2s ease-in-out infinite alternate 2s;
+}
+
+#Vector-29 {
+  animation: colord 2s ease-in-out infinite alternate;
+}
+
+@keyframes me {
+  from {
+    transform: rotateZ(5deg);
+  }
+  to {
+    transform: rotateZ(-5deg);
+  }
+}
+
+@keyframes arrow {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-5%);
+  }
+}
+@keyframes arrowU {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes colorz {
+  from {
+    fill: #00bfa6;
+  }
+  to {
+    fill: #ffd868;
+  }
+}
+@keyframes colord {
+  from {
+    fill: #00bf20;
+  }
+  to {
+    fill: #ffd868;
+  }
+}
+
+@keyframes linez {
+  0% {
+    fill: white;
+  }
+  10% {
+    fill: #00bfa6;
+  }
+  30% {
+    fill: white;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+// darkmode
+
+.dark {
+  background: rgb(19, 19, 19);
+
+  a,
+  h3,
+  p {
+    color: white;
+  }
+
+  #me {
+    transform: scaleX(-1);
+    #Vector-66,
+    #Vector-61,
+    #Vector-62,
+    #Vector-60,
+    #Vector-59 {
+      transition: all 1s ease-in-out;
+      fill: #683b2b;
+    }
+  }
+  #Vector {
+    fill: #dbdbdb;
+  }
+}

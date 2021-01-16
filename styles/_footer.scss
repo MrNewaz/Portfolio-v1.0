@@ -1,0 +1,17 @@
+footer {
+  background: $background-color;
+  color: white;
+  min-height: 10vh;
+  padding: 0% 5%;
+  @include flex(flex-start, center, row);
+  ul {
+    flex: 1 1 40rem;
+    @include flex(space-around, center, row);
+    #mail:hover {
+      fill: red;
+    }
+  }
+  h4 {
+    flex: 1 1 40rem;
+  }
+}
